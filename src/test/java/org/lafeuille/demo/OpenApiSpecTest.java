@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -60,7 +59,7 @@ public class OpenApiSpecTest {
 
     private void copyToPath(byte[] bytes, Path target) throws IOException {
         Files.deleteIfExists(target);
-        try (InputStream inputStream = new ByteArrayInputStream(bytes)) {
+        try (var inputStream = new ByteArrayInputStream(bytes)) {
             Files.copy(inputStream, target);
         }
     }
