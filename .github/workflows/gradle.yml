@@ -32,4 +32,5 @@ jobs:
         arguments: build
     - uses: actions/upload-artifact@v3
       with:
+        name: openapi.yaml
         path: build/generated/docs/openapi.yaml
