@@ -36,9 +36,9 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: build/generated/docs/openapi.yaml
+        path: build/generated/docs/openapi.yaml
 
-    # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
+      # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
       uses: gradle/gradle-build-action@v2
